@@ -101,7 +101,7 @@ Of all NBA players across the 2024-25 regular season, 569 players registered at 
 • commits a turnover
 
 $$
-\text{USG%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
+\text{USG\%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
 $$
 
 > In this study, USG% refers to **role size**. In other words, how involved in the offense is a player when on the court?
