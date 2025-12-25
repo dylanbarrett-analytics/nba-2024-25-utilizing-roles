@@ -289,7 +289,7 @@ For the dashboard, all 373 players in this study were placed into cohorts based 
 
 ![Top Players Under 24](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_young_players.png)
 
-As a bonus, these are the highest OC grades for *players under 24*. This study is not intended to predict future all-stars, but it's worth sharing.
+As a bonus, these are the highest OC grades for *players under 24*. This study is not intended to predict future stars, but it's worth sharing.
 
 ---
 
