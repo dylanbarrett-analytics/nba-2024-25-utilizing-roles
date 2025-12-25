@@ -96,12 +96,12 @@ Of all NBA players across the 2024-25 regular season, 569 players registered at 
 ## **Notebook 02: Data Acquisition, Pt. 2**
 
 **Usage Rate (USG%)** estimates the **percentage of team possessions a player finishes** while on the court. A possession is considered "finished" or "used" when a player either:
-• attempts a shot
-• draws free throws
-• commits a turnover
+- attempts a shot
+- draws free throws
+- commits a turnover
 
 $$
-\text{USG\%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
+\text{USG%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
 $$
 
 > In this study, USG% refers to **role size**. In other words, how involved in the offense is a player when on the court?
@@ -155,8 +155,8 @@ Therefore, these Basketball-Reference season-level values were merged with the p
 ### **Filters**
 
 To ensure that all metrics reflect meaningful on-court roles as opposed to random, short-term appearances, the following filters were applied:
-• A player must play **at least 12 minutes** in a game for that game to be included
-• A player must play **at least 20 games** during the regular season for that player to be included
+- A player must play **at least 12 minutes** in a game for that game to be included
+- A player must play **at least 20 games** during the regular season for that player to be included
 
 ### **Regression**
 
@@ -283,9 +283,9 @@ Now each player's season can be summed up with one simple grade. The **average O
 ![Dashboard Screenshot](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_dashboard.png)
 
 For the dashboard, all 373 players in this study were placed into cohorts based on role size:
-  • Low Usage: The player's season USG% is 15% or lower (94 players)
-  • Medium Usage: The player's season USG% is between 15% and 23% (189 players)
-  • High Usage: The player's season USG% is 23% or higher (90 players)
+- Low Usage: The player's season USG% is 15% or lower (94 players)
+- Medium Usage: The player's season USG% is between 15% and 23% (189 players)
+- High Usage: The player's season USG% is 23% or higher (90 players)
 
 ![Top Players Under 24](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_young_players.png)
 
@@ -297,7 +297,7 @@ As a bonus, these are the highest OC grades for players under 24. This study is 
 
 The full arc of a successful offensive possession begins with a rebound and ends with points and assists. PRA captures this entire sequence.
 
-Notably, **8 of the top 11 OC Grades** belong to **centers** even though their role sizes are relatively low. Their impact often looks routine and effortless, as opposed to flashy or highlight-worthy, especially compared to smaller positions. Because of this, their contributions are easy to take for granted despite being foundational to team success.
+Notably, **8 of the top 11 OC Grades** belong to **centers** even though their offensive role sizes are relatively small. Their impact often looks routine and effortless, as opposed to flashy or highlight-worthy, especially compared to smaller positions. Because of this, their contributions are easy to take for granted despite being foundational to team success.
 
 Not everyone can be *the star*, but this study illustrates that you don't need to be *the star* to have *star impact*.
 
@@ -309,4 +309,4 @@ Not everyone can be *the star*, but this study illustrates that you don't need t
 
 ---
 
-<sub> On an unrelated note, I am so excited about the future of the Brooklyn Nets with head coach Jordi Fernández. This team is so fun to watch.
+<sub> On an unrelated note, I am so excited about the future of the Brooklyn Nets with head coach Jordi Fernández. This team is so fun to watch. ⚫️⚪️
