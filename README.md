@@ -4,7 +4,7 @@
 
 ## **Introduction**
 
-For the modern NBA fan, checking a player's game box score usually begins with points, rebounds, and assists. These are the primary statistics that measure raw on-court *output*. Superstars are expected to put up big numbers, but what about players who have smaller roles in a team's offense? Traditional box scores may fail to capture their true impact.
+For any NBA fan, checking a player's game box score usually begins with points, rebounds, and assists. These are the primary statistics that measure raw on-court *output*. Superstars are expected to put up big numbers, but what about players who have smaller roles in a team's offense? Traditional box scores may fail to capture their true impact.
 
 This study analyzes how NBA players **maximize output** relative to their **offensive role size** during the 2024-25 regular season. Instead of focusing on raw volume statistics alone, this analysis examines how **efficiently** and **consistently** players convert their usage into output.
 
