@@ -172,7 +172,7 @@ $$
 
 Where:
 - $\alpha$ = $\text{baseline output level}$
-- $\beta$ = $\text{elasticity of PRA with respect to USG}$ = $\text{the % change in PRA associated with a 1% change in USG}$
+- $\beta$ = $\text{elasticity of PRA with respect to USG}$ = $\text{the \\\% change in PRA associated with a 1\\\% change in USG}$
 - $\varepsilon$ = $\text{random game-to-game fluctuations}$
 
 According to the regression results, $\beta$ = 0.898.
