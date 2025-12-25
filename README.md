@@ -188,11 +188,11 @@ Now some players have heavy offensive responsibilities while others play smaller
 > Note: For any game where a player has a USG% of 29.3% or higher, there is NO adjustment. PRA Signal simply equals the raw PRA value in this case.
 
 $$
-\text{PRA Signal} = \text{PRA} \cdot \left( \frac{29.3\%}{\text{USG}} \right)^{\beta}
+\text{PRA Signal} = \text{PRA} \cdot \left( \frac{29.3\text{\%}}{\text{USG}} \right)^{\beta}
 $$
 
 Where:
-- $29.3\%$ = $\text{average USG of all-stars over the previous 5 seasons}$
+- $29.3\text{\%}$ = $\text{average USG of all-stars over the previous 5 seasons}$
 - $\beta$ = 0.898 = $\text{elasticity of PRA with respect to USG}$
 
 With this, all game outputs were comparable.
