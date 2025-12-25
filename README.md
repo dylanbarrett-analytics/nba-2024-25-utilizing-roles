@@ -77,7 +77,7 @@ Analysis of maximizing output relative to role size
 ### **CSV Exports**
 - [`NBA_2024_25_game_logs_final.csv`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/csv/NBA_2024_25_game_logs_final.csv)
 Finalized player game logs for the 2024-25 NBA regular season
-- [`player_season_projections.csv`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/csv/player_season_projections.csv)
+- [`season_summary.csv`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/csv/season_summary.csv)
 Season-level averages for all players
 
 ### **Documentation**
