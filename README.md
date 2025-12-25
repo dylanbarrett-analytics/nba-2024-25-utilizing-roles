@@ -22,7 +22,7 @@ This study analyzes how NBA players **maximize output** relative to their **offe
 8. [Notebook 03: Data Acquisition, Pt. 3](#notebook-03-data-acquisition-pt-3)
 9. [Notebook 04: Calculating All-Star Baselines](#notebook-04-calculating-all-star-baselines-usg-and-pra)
 10. [Notebook 05: Merge 2024-25 Game Logs & Season Averages](#notebook-05-merge-2024-25-game-logs--2024-25-season-averages)
-11. [Notebook 06 & Role-Based Analysis](#notebook-06--dashboard-role-based-analysis)
+11. [Notebook 06 + Dashboard: Role-Based Analysis](#notebook-06--dashboard-role-based-analysis)
 12. [Tableau Dashboard](#tableau-dashboard)
 13. [Conclusion](#conclusion)
 14. [Dashboard Link](#tableau-dashboard-link)
@@ -188,7 +188,7 @@ Now some players have heavy offensive responsibilities while others play smaller
 > Note: For any game where a player has a USG% of 29.3% or higher, there is NO adjustment. PRA Signal simply equals the raw PRA value in this case.
 
 $$
-\text{PRA Signal} = \text{PRA} \cdot \left( \frac{29.3\%}{USG} \right)^{\beta}
+\text{PRA Signal} = \text{PRA} \cdot \left( \frac{29.3\%}{\text{USG}} \right)^{\beta}
 $$
 
 Where:
