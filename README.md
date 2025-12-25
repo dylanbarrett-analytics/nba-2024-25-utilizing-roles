@@ -101,10 +101,8 @@ Of all NBA players across the 2024-25 regular season, 569 players registered at 
 • commits a turnover
 
 $$
-\[
 USG\% = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}
 {Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
-\]
 $$
 
 > In this study, USG% refers to **role size**. In other words, how involved in the offense is a player when on the court?
@@ -112,9 +110,7 @@ $$
 **Points + Rebounds + Assists (PRA)** is simply a measure of **output**, combining a player's scoring, playmaking, and rebounding contributions.
 
 $$
-\[
 PRA = PTS + REB + AST
-\]
 $$
 
 In the USG% calculation above, there are several team-related inputs that the player game logs (from Notebook 01) do not have. Therefore, in order to get these inputs, team game logs were retrieved from the NBA API endpoint `LeagueGameLog`. After cleaning, player game logs and team game logs were merged into one DataFrame where USG% and PRA were calculated for every game.
