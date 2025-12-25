@@ -89,7 +89,7 @@ Season-level averages for all players
 
 Of all NBA players across the 2024-25 regular season, 569 players registered at least one statistic (a point, a turnover, ..., anything of a statistical nature). All regular season game logs for these 569 players were retrieved from the NBA API endpoints `LeagueDashPlayerStats` and `PlayerGameLog`. These endpoints included player IDs (e.g., 1630639), but not the actual player names. Therefore, the names were retrieved from the NBA API endpoint `players`. After appropriate cleaning and merging, the player game logs DataFrame was created.
 
-> <sub> Note: "API" stands for Application Programming Interface. It's like a vending machine where you can request data. "Endpoints" are like selections inside the vending machine.
+> <sub> **Note:** "API" stands for Application Programming Interface. It's like a vending machine where you can request data. "Endpoints" are like selections inside the vending machine.
 
 ---
 
@@ -116,7 +116,7 @@ In the USG% calculation above, there are several team-related inputs that the pl
 
 > One could make the argument that rebounding doesn't impact offensive output as directly as points or assists, so why include it? It's a fair point, but **every offensive possession has a lifecycle**. A rebound creates (or extends) an offensive possession, and then points and/or assists finish it (at least in successful offensive possessions). PRA captures this full arc, which is why rebounding remains a key component of measuring offensive output.
 
-> <sub> Note: This analysis uses USG% and USG interchangeably; both refer to "Usage Rate".
+> <sub> **Note:** This analysis uses USG% and USG interchangeably; both refer to "Usage Rate".
 
 ---
 
@@ -183,7 +183,7 @@ Some players have heavy offensive responsibilities while others play smaller rol
 
 > These adjustments are based on the "all-star usage baseline" of **29.3%** (the average USG% of every all-star across the previous 5 seasons). PRA Signal adjusts each game's output *as if* it were produced at this common usage baseline.
 >
-> Note: For any game where a player has a USG% of 29.3% or higher, there is NO adjustment. In this case, PRA Signal simply equals the raw PRA value.
+> **Note:** For any game where a player has a USG% of 29.3% or higher, there is NO adjustment. In this case, PRA Signal simply equals the raw PRA value.
 
 $$
 \text{PRA Signal} = \text{PRA} \cdot \left( \frac{29.3\\\%}{\text{USG}} \right)^{\beta}
@@ -199,7 +199,7 @@ For example, if Player A has a role size of 30% and Player B has a role size of 
 
 > It's very important to point out that these are **signals** (or indicators), NOT projections.
 >
-> Example:
+> **Example:**
 > In a game, Player X records 16 PRA with a 20% usage rate. 20% is less than the all-star baseline of 29.3%, so using the PRA Signal formula above, this output (16 PRA) adjusts to a PRA *Signal* of 30.9.
 > 
 > This does NOT mean that Player X *would have* produced 30.9 PRA if their USG% was increased from 20% to 29.3%.
@@ -281,9 +281,9 @@ Now each player's season can be summed up with one grade. The **average OC grade
 ![Dashboard Screenshot](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_dashboard.png)
 
 For the dashboard, all 373 players in this study were placed into cohorts based on role size:
-- Low Usage: The player's season USG% is 15% or lower (94 players)
-- Medium Usage: The player's season USG% is between 15% and 23% (189 players)
-- High Usage: The player's season USG% is 23% or higher (90 players)
+- **Low Usage:** The player's season USG% is 15% or lower (94 players)
+- **Medium Usage:** The player's season USG% is between 15% and 23% (189 players)
+- **High Usage:** The player's season USG% is 23% or higher (90 players)
 
 ![Top Players Under 24](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_young_players.png)
 
