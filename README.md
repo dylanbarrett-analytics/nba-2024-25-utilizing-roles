@@ -36,8 +36,8 @@ The primary data for this study is a combination of player-level and team-level 
 The secondary data is season-level per-game statistics for the previous five regular seasons (2019-20 through 2023-24). These were sourced from Basketball-Reference.
 
 > For example, for the 2023-24 regular season:
-> • [Standard Per-Game Statistics](https://www.basketball-reference.com/leagues/NBA_2024_per_game.html)
-> • [Advanced Statistics](https://www.basketball-reference.com/leagues/NBA_2024_advanced.html)
+> - [Standard Per-Game Statistics](https://www.basketball-reference.com/leagues/NBA_2024_per_game.html)
+> - [Advanced Statistics](https://www.basketball-reference.com/leagues/NBA_2024_advanced.html)
 
 ---
 
