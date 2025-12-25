@@ -6,7 +6,7 @@
 
 For any NBA fan, checking a player's game box score usually begins with points, rebounds, and assists. These are the primary statistics that measure raw on-court *output*. Superstars are expected to put up big numbers, but what about players who have smaller roles in a team's offense? Traditional box scores may fail to capture their true impact.
 
-This study analyzes how NBA players **maximize output** relative to their **offensive role size** during the 2024-25 regular season. Instead of focusing on raw volume statistics alone, this analysis examines how **efficiently** and **consistently** players convert their usage into output.
+This study analyzes how NBA players **maximize output** relative to their **offensive role size** during the 2024-25 regular season. Instead of focusing on raw volume statistics alone, this analysis examines how **efficiently** and **consistently** players convert usage → output.
 
 ---
 
@@ -31,9 +31,9 @@ This study analyzes how NBA players **maximize output** relative to their **offe
 
 ## **About the Data**
 
-The primary data for this study is a combination of player-level and team-level game logs from the 2024-25 NBA regular season. This was sourced from the **NBA API** (via Python), which is the official data interface that powers statistics on NBA.com.
+The primary data for this study is a combination of player-level and team-level game logs from the 2024-25 NBA regular season. They were sourced from the **NBA API** (via Python), which is the official data interface that powers statistics on NBA.com.
 
-The secondary data is season-level per-game statistics for the previous five regular seasons (2019-20 through 2023-24). These were sourced from Basketball-Reference.
+The secondary data consists of season-level per-game statistics for the previous five regular seasons (2019-20 through 2023-24). These were sourced from [Basketball-Reference](https://www.basketball-reference.com/).
 
 > For example, for the 2023-24 regular season:
 > - [Standard Per-Game Statistics](https://www.basketball-reference.com/leagues/NBA_2024_per_game.html)
@@ -43,11 +43,11 @@ The secondary data is season-level per-game statistics for the previous five reg
 
 ## **Project Goals**
 
-1. How often does a player produce all-star level output within their role?
+1. How often does a player produce *all-star-level* output within their role?
 2. How much output does a player produce within their role?
 3. Who combines high output (relative to their role) with strong game-to-game consistency?
 
-> <sub> Players are evaluated both league-wide and within usage cohorts (low/medium/high usage) to ensure fair role-based comparisons.
+> <sub> Players were evaluated both league-wide and within usage cohorts (low/medium/high usage) to ensure fair role-based comparisons.
 
 ---
 
@@ -87,9 +87,9 @@ Season-level averages for all players
 
 ## **Notebook 01: Data Acquisition, Pt. 1**
 
-Of all NBA players across the 2024-25 regular season, 569 players registered at least one statistic (points, turnovers, ..., anything). All regular season game logs for these 569 players were retrieved from the NBA API endpoints `LeagueDashPlayerStats` and `PlayerGameLog`. These endpoints include player IDs (e.g., 1630639), but not the actual player names. The names were retrieved from the NBA API endpoint `players`. After appropriate cleaning and merging, the player game logs DataFrame was created.
+Of all NBA players across the 2024-25 regular season, 569 players registered at least one statistic (a point, a turnover, ..., anything of a statistical nature). All regular season game logs for these 569 players were retrieved from the NBA API endpoints `LeagueDashPlayerStats` and `PlayerGameLog`. These endpoints included player IDs (e.g., 1630639), but not the actual player names. Therefore, the names were retrieved from the NBA API endpoint `players`. After appropriate cleaning and merging, the player game logs DataFrame was created.
 
-> <sub> Note: "API" stands for Application Programming Interface. It's like a vending machine where you can request data. "Endpoints" are like selections in the vending machine.
+> <sub> Note: "API" stands for Application Programming Interface. It's like a vending machine where you can request data. "Endpoints" are like selections inside the vending machine.
 
 ---
 
@@ -101,10 +101,10 @@ Of all NBA players across the 2024-25 regular season, 569 players registered at 
 - commits a turnover
 
 $$
-\text{USG%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
+\text{USG\\\%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
 $$
 
-> In this study, USG% refers to **role size**. In other words, how involved in the offense is a player when on the court?
+> In this study, USG% refers to **role size** (or offensive role size). In other words, how much was a player involved in the offense when on the court?
 
 **Points + Rebounds + Assists (PRA)** is simply a measure of **output**, combining a player's scoring, playmaking, and rebounding contributions.
 
@@ -112,7 +112,9 @@ $$
 PRA = PTS + REB + AST
 $$
 
-In the USG% calculation above, there are several team-related inputs that the player game logs (from Notebook 01) do not have. Therefore, in order to get these inputs, team game logs were retrieved from the NBA API endpoint `LeagueGameLog`. After cleaning, player game logs and team game logs were merged into one DataFrame where USG% and PRA were calculated for every game.
+In the USG% calculation above, there are several team-related inputs that the player game logs (from Notebook 01) do not have. Therefore, to get these necessary inputs, team game logs were retrieved from the NBA API endpoint `LeagueGameLog`. After cleaning, player game logs and team game logs were merged into one DataFrame, where USG% and PRA were calculated for every game.
+
+> One could make the argument that rebounding doesn't impact offensive output as directly as points or assists, so why include it? It's a fair point, but **every offensive possession has a lifecycle**. A rebound creates (or extends) an offensive possession, and then points and/or assists finish it (at least in successful offensive possessions). PRA captures this full arc, which is why rebounding remains a key component of measuring offensive output.
 
 > <sub> Note: This analysis uses USG% and USG interchangeably; both refer to "Usage Rate".
 
@@ -122,13 +124,13 @@ In the USG% calculation above, there are several team-related inputs that the pl
 
 For USG% and PRA, reference points were needed so role sizes and output could be properly evaluated.
 
-Using Basketball-Reference, per-game and advanced season-level statistics were loaded from the **previous 5 seasons (2019-20 through 2023-24)**. All of this data was cleaned, merged, and combined into one DataFrame.
+Using Basketball-Reference, both per-game and advanced season-level statistics were loaded from the **previous 5 seasons (2019-20 through 2023-24)**. This was cleaned, merged, and combined into one DataFrame.
 
 ---
 
 ## **Notebook 04: Calculating All-Star Baselines (USG% and PRA)**
 
-The historical data from Notebook 03 was then filtered so that it **only** included season statistics from **all-stars**.
+The historical data from Notebook 03 was then filtered so that it **only** included season statistics from **all-stars**. The goal was to eventually compare current players' statistics with these historical all-star players' statistics.
 
 For the previous five seasons, the **average USG% was 29.3%** and the **average PRA was 37.8 points + rebounds + assists**.
 
@@ -136,17 +138,13 @@ For the previous five seasons, the **average USG% was 29.3%** and the **average 
 
 ## **Notebook 05: Merge 2024-25 Game Logs & 2024-25 Season Averages**
 
-Before the analysis, I wanted to make sure that all player USG% and PRA values were appropriately aggregated.
+Before the analysis, I wanted to make sure that all player USG% and PRA values were appropriately aggregated. For each player's season, should I take the average of all USG% values across all games? Or should I use the season-level USG% that Basketball-Reference already calculated?
 
-For each player's season, should I take the average of all USG% values across all games? Or should I use the season-level USG% that Basketball-Reference already calculated?
+I decided to use the latter so that every player was anchored to a single, stable USG% value, avoiding any game-to-game fluctuations. Therefore, these Basketball-Reference season-level values were merged into the player game logs DataFrame.
 
-I decided to use the latter so that every player was anchored to a single, stable USG% value, avoiding any game-to-game fluctuations.
-
-Therefore, these Basketball-Reference season-level values were merged with the player game logs.
-
-> Before the merge took place, there was a player name issue since the player game logs (from NBA API) had some names that differed from the Basketball-Reference names. For example, in NBA API, the name is Pacôme Dadiet, but in Basketball-Reference, the name appears as Pacome Dadiet (without an accent). In order for the merge to work, all names must be exactly the same, so I decided to use the NBA API names.
+> Before the merge took place, there was a player name issue since the player game logs (from NBA API) had some names that differed from the Basketball-Reference names. For example, in NBA API, the name is Pacôme Dadiet, but in Basketball-Reference, the name appears as Pacome Dadiet (without an accent). For the merge to work, all names must be exactly the same, so I decided to use the NBA API names.
 >
-> After exporting all names from both sources, I manually scanned through all 569 names across 2 text files, and found 22 names that didn't match. These names were "cleaned" so that all 569 names matched. Finally, the merge was successful.
+> After exporting all names from both sources, I manually scanned through all 569 player names across 2 text files, and found 22 names that didn't match. These names were "cleaned" so that all 569 names matched. Then a successful merge occurred.
 
 ---
 
@@ -154,7 +152,7 @@ Therefore, these Basketball-Reference season-level values were merged with the p
 
 ### **Filters**
 
-To ensure that all metrics reflect meaningful on-court roles as opposed to random, short-term appearances, the following filters were applied:
+To ensure all metrics reflect meaningful on-court roles as opposed to random, short-term appearances, the following filters were applied:
 - A player must play **at least 12 minutes** in a game for that game to be included
 - A player must play **at least 20 games** during the regular season for that player to be included
 
@@ -164,7 +162,7 @@ The first objective was to measure **how output (PRA) changed** in response to *
 
 > <sub> In other words, if a player's role size increased by 1%, *by what percentage* did their output increase?
 
-A **log-log regression** was used in Python to find this.
+To find this, **log-log regression** was used in Python:
 
 $$
 \log(\text{PRA}) = \alpha + \beta \log(\text{USG}) + \varepsilon
@@ -181,11 +179,11 @@ This means that a **1% increase in role size (USG%)** was associated with a **0.
 
 ### **PRA Signal**
 
-Now some players have heavy offensive responsibilities while others play smaller roles. **PRA Signal** was designed **to adjust a player's output (PRA)** based on their role size, whether it's high usage, low usage, or somewhere in between.
+Some players have heavy offensive responsibilities while others play smaller roles. **PRA Signal** was designed **to adjust a player's output (PRA)** based on their role size, whether it's high usage, low usage, or somewhere in between.
 
 > These adjustments are based on the "all-star usage baseline" of **29.3%** (the average USG% of every all-star across the previous 5 seasons). PRA Signal adjusts each game's output *as if* it were produced at this common usage baseline.
 >
-> Note: For any game where a player has a USG% of 29.3% or higher, there is NO adjustment. PRA Signal simply equals the raw PRA value in this case.
+> Note: For any game where a player has a USG% of 29.3% or higher, there is NO adjustment. In this case, PRA Signal simply equals the raw PRA value.
 
 $$
 \text{PRA Signal} = \text{PRA} \cdot \left( \frac{29.3\\\%}{\text{USG}} \right)^{\beta}
@@ -197,12 +195,12 @@ Where:
 
 With this, all game outputs were comparable.
 
-For example, if Player A has a role size of 30% and Player B has a role size of 15%, their outputs can be fairly compared (via PRA Signal) even though their role sizes are very different.
+For example, if Player A has a role size of 30% and Player B has a role size of 15%, their outputs can be fairly compared (via PRA Signal) even though their role sizes are significantly different.
 
 > It's very important to point out that these are **signals** (or indicators), NOT projections.
 >
 > Example:
-> In a game, Player X records 16 PRA with a 20% usage rate. 20% is less than the all-star baseline of 29.3%, so using the PRA Signal formula above, this output (16 PRA) adjusts to a PRA Signal of 30.9.
+> In a game, Player X records 16 PRA with a 20% usage rate. 20% is less than the all-star baseline of 29.3%, so using the PRA Signal formula above, this output (16 PRA) adjusts to a PRA *Signal* of 30.9.
 > 
 > This does NOT mean that Player X *would have* produced 30.9 PRA if their USG% was increased from 20% to 29.3%.
 >
@@ -223,7 +221,7 @@ $$
 Where:
 - $37.8$ = $\text{average PRA of all-stars over the previous 5 seasons}$
 
-The **All-Star Output Rate** is the **percentage of a player's games** where the **PRA signal was at least 37.8**.
+The **All-Star Output Rate** is the **percentage of a player's games** where the **PRA signal was at least 37.8** (i.e., all-star-level).
 
 This metric indicates **how consistently** a player produced **all-star quality output** game-to-game across the regular season, **regardless of role size**.
 
@@ -233,9 +231,9 @@ The **average All-Star Output Rate** across all 373 players in this study was **
 
 ### **Output per Role**
 
-To recap, PRA measures raw output, PRA Signal measures adjusted output (i.e., if all players had the same role size), but these don't say much about output efficiency.
+To recap, PRA measures raw output, PRA Signal measures adjusted output (i.e., if all players had the same role size), but both of these measures don't say much about output efficiency.
 
-**Output per Role** addresses that.
+**Output per Role** addresses this concern:
 
 $$
 \text{Output per Role} = \frac{\text{PRA}}{\text{USG}}
@@ -243,17 +241,17 @@ $$
 
 Output per Role measures **how efficiently** a player **produced output relative to their role size**. In other words, how efficiently does a player convert their role into output?
 
-> For example, Player X had a raw PRA of 16 with a USG of 15%. Player Y had a raw PRA of 28 with a USG of 30%. Player X's output per role is 1.07, while for Player Y, it's 0.93.
+> For example, Player X had a raw PRA of 16 with a USG of 15%. Player Y had a raw PRA of 28 with a USG of 30%. Using the formula, Player X's output per role is 1.07, while for Player Y, it's 0.93.
 >
-> Even though Player Y's raw output was higher, Player X was more efficient.
+> Even though Player Y's raw output was higher, Player X was more efficient. Here, efficiency is more important than raw volume.
 
-This metric was measured for every game, but for a player's entire regular season, simply take the average across all games.
+This metric was measured for every game, but for a player's entire regular season, simply take the average value across all games.
 
-The **average Output per Role** across all 373 players in this study was **0.95**. The highest was Josh Hart and Rudy Gobert, both with a value of 1.90.
+The **average Output per Role** across all 373 players in this study was **0.95**. The highest belonged to Josh Hart and Rudy Gobert, both with an average of 1.90.
 
 ### **Output Consistency (OC) Grade**
 
-All-Star Output Rate and Output per Role are the two primary metrics of this analysis, but I decided the most presentable option was to combine these into one singular primary metric.
+All-Star Output Rate and Output per Role are the two primary metrics of this analysis, but the most presentable option would be to combine these two into one primary metric.
 
 $$
 \text{Output Consistency} = \sqrt{{\text{All-Star Output Rate}} \times {\text{Output per Role}}}
@@ -261,9 +259,9 @@ $$
 
 **Output Consistency (OC)** measures **how consistently** and **how efficiently** a player produced **high output relative to their role size** across all regular season games.
 
-> <sub> To combine All-Star Output Rate and Output per Role, I took the geometric mean of these two metrics. This was done in order to regulate any potential extreme values. That's the purpose of the square root.
+> <sub> To combine All-Star Output Rate and Output per Role, I took the geometric mean of these two metrics. This was done to regulate any potential extreme values. That's the purpose of the square root.
 
-For interpretability, these OC values were rescaled to a **0-100 grade**:
+For further interpretability, these OC values were rescaled to a **0-100 grade**:
 
 $$
 \text{Output Consistency Grade} = \frac{\text{OC} - \min(\text{OC})}{\max(\text{OC}) - \min(\text{OC})}
@@ -274,7 +272,7 @@ Where:
 - $\min(\text{OC})$ = $\text{minimum observed OC value}$ = $0$
 - $\max(\text{OC})$ = $\text{maximum observed OC value}$ = $1.305$
 
-Now each player's season can be summed up with one simple grade. The **average OC grade** was **36.7**. The highest was Nikola Jokić with a grade of 100.0.
+Now each player's season can be summed up with one grade. The **average OC grade** across all 373 players in this study was **36.7**. The highest was Nikola Jokić with a grade of 100.0.
 
 ---
 
@@ -289,7 +287,7 @@ For the dashboard, all 373 players in this study were placed into cohorts based 
 
 ![Top Players Under 24](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_young_players.png)
 
-As a bonus, these are the highest OC grades for *players under 24*. This study is not intended to predict future stars, but it's worth sharing.
+As a bonus, here are the highest OC grades for *players under 24*. This study is not intended to predict future stars, but it's worth sharing for additional context.
 
 ---
 
@@ -309,4 +307,4 @@ Not everyone can be *the star*, but this study illustrates that you don't need t
 
 ---
 
-<sub> On an unrelated note, I am so excited about the future of the Brooklyn Nets with head coach Jordi Fernández. This team is so fun to watch. ⚫️⚪️
+<sub> On an unrelated note, I am so excited about the future of the Brooklyn Nets with head coach Jordi Fernández. The development of this team is so fun to watch. ⚫️⚪️🏗️
