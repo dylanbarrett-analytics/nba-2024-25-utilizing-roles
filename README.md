@@ -61,24 +61,24 @@ The secondary data is season-level per-game statistics for the previous five reg
 ## **Project Files**
 
 ### **Jupyter Notebooks**
-[`01_acquire_player_game_logs.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/01_acquire_player_game_logs.ipynb)
-- Raw data collection (via NBA API), cleaning, and consolidation of all 2024-25 player game logs
-[`02_acquire_team_game_logs.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/02_acquire_team_game_logs.ipynb)
-- Raw data collection (via NBA API), cleaning, and consolidation of all 2024-25 team game logs
-[`03_acquire_previous_5_seasons_stats.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/03_acquire_previous_5_seasons_stats.ipynb)
-- Raw data import (from Basketball-Reference), cleaning, merging, and consolidation of all player per-game statistics for 2024-25 and the previous 5 seasons (2019-20 through 2023-24)
-[`04_calculating_historical_all_star_baselines.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/04_calculating_historical_all_star_baselines.ipynb)
-- Using 2019-20 through 2023-24 per-game data, calculations of average USG% and PRA for all all-stars combined
-[`05_merge_player_game_logs_and_season_averages.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/05_merge_player_game_logs_and_season_averages.ipynb)
-- Merging of 2024-25 player game logs and season-level 2024-25 per-game statistics
-[`06_role_based_analysis.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/06_role_based_analysis.ipynb)
-- Analysis of maximizing output relative to role size
+- [`01_acquire_player_game_logs.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/01_acquire_player_game_logs.ipynb)
+Raw data collection (via NBA API), cleaning, and consolidation of all 2024-25 player game logs
+- [`02_acquire_team_game_logs.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/02_acquire_team_game_logs.ipynb)
+Raw data collection (via NBA API), cleaning, and consolidation of all 2024-25 team game logs
+- [`03_acquire_previous_5_seasons_stats.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/03_acquire_previous_5_seasons_stats.ipynb)
+Raw data import (from Basketball-Reference), cleaning, merging, and consolidation of all player per-game statistics for 2024-25 and the previous 5 seasons (2019-20 through 2023-24)
+- [`04_calculating_historical_all_star_baselines.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/04_calculating_historical_all_star_baselines.ipynb)
+Using 2019-20 through 2023-24 per-game data, calculations of average USG% and PRA for all all-stars combined
+- [`05_merge_player_game_logs_and_season_averages.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/05_merge_player_game_logs_and_season_averages.ipynb)
+Merging of 2024-25 player game logs and season-level 2024-25 per-game statistics
+- [`06_role_based_analysis.ipynb`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/notebooks/06_role_based_analysis.ipynb)
+Analysis of maximizing output relative to role size
 
 ### **CSV Exports**
-[`NBA_2024_25_game_logs_final.csv`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/csv/NBA_2024_25_game_logs_final.csv)
-- Finalized player game logs for the 2024-25 NBA regular season
-[`player_season_projections.csv`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/csv/player_season_projections.csv)
-- Season-level averages for all players
+- [`NBA_2024_25_game_logs_final.csv`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/csv/NBA_2024_25_game_logs_final.csv)
+Finalized player game logs for the 2024-25 NBA regular season
+- [`player_season_projections.csv`](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/csv/player_season_projections.csv)
+Season-level averages for all players
 
 ### **Documentation**
 - `README.md`: Project documentation
