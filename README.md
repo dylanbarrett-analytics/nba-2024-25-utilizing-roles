@@ -53,8 +53,8 @@ The secondary data consists of season-level per-game statistics for the previous
 
 ## **Tools Used**
 
-- **Python** (via **Jupyter Notebook):** Data loading, cleaning, merging, and analysis ![Python](https://img.shields.io/badge/Python-orange)
-- **Tableau:** Dashboard design and final visualizations ![Tableau](https://img.shields.io/badge/Tableau-blue)
+- ![Python](https://img.shields.io/badge/Python-orange) (via **Jupyter Notebook):** Data loading, cleaning, merging, and analysis
+- ![Tableau](https://img.shields.io/badge/Tableau-blue) Dashboard design and final visualizations
 
 ---
 
