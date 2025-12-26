@@ -307,7 +307,9 @@ Not everyone can be *the star*, but this study illustrates that you don't need t
 
 ---
 
-<small> <mark> **Note:** </mark> This study was for exploratory purposes only, not for "reinventing the wheel". This data can be used for so many different creative directions. This was one of them.
+<p align="center">
+  <mark> **Note:** </mark> This study was for exploratory purposes **only**.
+</p>
 
 ---
 
