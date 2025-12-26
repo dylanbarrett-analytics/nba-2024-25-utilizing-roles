@@ -278,29 +278,17 @@ Now each player's season can be summed up with one grade. The **average OC grade
 
 ### **Tableau Dashboard**
 
-<figure>
-  <img src="images/NBA_2024_25_utilizing_roles_dashboard.png" alt="NBA 2024-25: Utilizing Roles">
+![Dashboard Screenshot](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_dashboard.png)
 
-  <figcaption>
-    <em>
-      For the dashboard, all 373 players in this study were placed into cohorts based on role size:
-      - **Low Usage:** The player's season USG% is 15% or lower (94 players)
-      - **Medium Usage:** The player's season USG% is between 15% and 23% (189 players)
-      - **High Usage:** The player's season USG% is 23% or higher (90 players)
-    </em>
-  </figcaption>
-</figure>
-      
+For the dashboard, all 373 players in this study were placed into cohorts based on role size:
+- **Low Usage:** The player's season USG% is 15% or lower (94 players)
+- **Medium Usage:** The player's season USG% is between 15% and 23% (189 players)
+- **High Usage:** The player's season USG% is 23% or higher (90 players)   
 <br>
-  <figure>
-    <img src="images/NBA_2024_25_utilizing_roles_rising_talent.png" alt="Top OC Grades for Players Under 23">
 
-    <figcaption>
-      <em>
-        As a bonus, here are the highest OC grades for *players under 23*. This study is not intended to predict future stars, but it's worth sharing for additional context.
-      </em>
-    </figcaption>
-  </figure>
+![Top Players Under 23](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_rising_talent.png)
+
+As a bonus, here are the highest OC grades for *players under 23*. This study is not intended to predict future stars, but it's worth sharing for additional context.
   
 ---
 
