@@ -103,14 +103,17 @@ Of all NBA players across the 2024-25 regular season, 569 players registered at 
 $$
 \text{USG\\\%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
 $$
+<br>
 
 > In this study, USG% refers to **role size** (or offensive role size). In other words, how much was a player involved in the offense when on the court?
+<br>
 
 **Points + Rebounds + Assists (PRA)** is simply a measure of **output**, combining a player's scoring, playmaking, and rebounding contributions.
 
 $$
 PRA = PTS + REB + AST
 $$
+<br>
 
 In the USG% calculation above, there are several team-related inputs that the player game logs (from Notebook 01) do not have. Therefore, to get these necessary inputs, team game logs were retrieved from the NBA API endpoint `LeagueGameLog`. After cleaning, player game logs and team game logs were merged into one DataFrame, where USG% and PRA were calculated for every game.
 
@@ -172,10 +175,12 @@ Where:
 - $\alpha$ = $\text{baseline output level}$
 - $\beta$ = $\text{elasticity of PRA with respect to USG}$ = $\text{the \\\% change in PRA associated with a 1\\\% change in USG}$
 - $\varepsilon$ = $\text{random game-to-game fluctuations}$
+<br>
 
 According to the regression results, $\beta$ = 0.898.
 
 This means that a **1% increase in role size (USG%)** was associated with a **0.898% increase in output (PRA)**.
+<br>
 
 ### **PRA Signal**
 
@@ -192,6 +197,7 @@ $$
 Where:
 - $29.3\\\%$ = $\text{average USG of all-stars over the previous 5 seasons}$
 - $\beta$ = 0.898 = $\text{elasticity of PRA with respect to USG}$
+<br>
 
 With this, all game outputs were comparable.
 
@@ -207,6 +213,7 @@ For example, if Player A has a role size of 30% and Player B has a role size of 
 > It simply means that Player X produced a high level of output (30.9) **relative to their role size**.
 > 
 > A high usage player with a PRA Signal of 30.9 is the **same adjusted output** as a low usage player with a PRA Signal of 30.9, even though their raw output (PRA) values may have been different.
+<br>
 
 ### **All-Star Output Rate** 
 
@@ -220,6 +227,7 @@ $$
 
 Where:
 - $37.8$ = $\text{average PRA of all-stars over the previous 5 seasons}$
+<br>
 
 The **All-Star Output Rate** is the **percentage of a player's games** where the **PRA signal was at least 37.8** (i.e., all-star-level).
 
@@ -228,6 +236,7 @@ This metric indicates **how consistently** a player produced **all-star quality 
 > For example, if Player A played 60 games, and in 30 of those games their PRA Signal was at least 37.8 (all-star quality), then their All-Star Output Rate is 50%.
 
 The **average All-Star Output Rate** across all 373 players in this study was **26.2%**. The highest was Nikola Jokić with a rate of 95.7%.
+<br>
 
 ### **Output per Role**
 
@@ -238,6 +247,7 @@ To recap, PRA measures raw output, PRA Signal measures adjusted output (i.e., if
 $$
 \text{Output per Role} = \frac{\text{PRA}}{\text{USG}}
 $$
+<br>
 
 Output per Role measures **how efficiently** a player **produced output relative to their role size**. In other words, how efficiently does a player convert their role into output?
 
@@ -248,6 +258,7 @@ Output per Role measures **how efficiently** a player **produced output relative
 This metric was measured for every game, but for a player's entire regular season, simply take the average value across all games.
 
 The **average Output per Role** across all 373 players in this study was **0.95**. The highest belonged to Josh Hart and Rudy Gobert, both with an average of 1.90.
+<br>
 
 ### **Output Consistency (OC) Grade**
 
@@ -256,6 +267,7 @@ All-Star Output Rate and Output per Role are the two primary metrics of this ana
 $$
 \text{Output Consistency} = \sqrt{{\text{All-Star Output Rate}} \times {\text{Output per Role}}}
 $$
+<br>
 
 **Output Consistency (OC)** measures **how consistently** and **how efficiently** a player produced **high output relative to their role size** across all regular season games.
 
