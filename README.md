@@ -53,8 +53,8 @@ The secondary data consists of season-level per-game statistics for the previous
 
 ## **Tools Used**
 
-- **Python** (via **Jupyter Notebook):** Data loading, cleaning, merging, and analysis
-- **Tableau:** Dashboard design and final visualizations
+- **Python** (via **Jupyter Notebook):** Data loading, cleaning, merging, and analysis ![Python](https://img.shields.io/badge/Python-Analysis-blue)
+- **Tableau:** Dashboard design and final visualizations ![Tableau](https://img.shields.io/badge/Tableau-Dashboard-orange)
 
 ---
 
@@ -285,9 +285,9 @@ For the dashboard, all 373 players in this study were placed into cohorts based 
 - **Medium Usage:** The player's season USG% is between 15% and 23% (189 players)
 - **High Usage:** The player's season USG% is 23% or higher (90 players)
 
-![Top Players Under 24](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_young_players.png)
+![Top Players Under 24](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_rising_talent.png)
 
-As a bonus, here are the highest OC grades for *players under 24*. This study is not intended to predict future stars, but it's worth sharing for additional context.
+As a bonus, here are the highest OC grades for *players under 23*. This study is not intended to predict future stars, but it's worth sharing for additional context.
 
 ---
 
@@ -304,6 +304,10 @@ Not everyone can be *the star*, but this study illustrates that you don't need t
 ## **Tableau Dashboard Link**
 
 🔗 [View the Dashboard on Tableau Public](https://public.tableau.com/app/profile/dylan.barrett1539/viz/---inprogress/Dashboard)
+
+---
+
+<small> <mark> **Note:** </mark> This study was for exploratory purposes only, not for "reinventing the wheel". This data can be used for so many different creative directions. This was one of them.
 
 ---
 
