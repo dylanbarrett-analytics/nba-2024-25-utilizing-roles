@@ -104,7 +104,6 @@ $$
 \text{USG\\\%} = 100 \times \frac{(FGA + 0.44 \times FTA + TOV) \times (Team\ Minutes / 5)}{Minutes \times (Team\ FGA + 0.44 \times Team\ FTA + Team\ TOV)}
 $$
 
-<br>
 > In this study, USG% refers to **role size** (or offensive role size). In other words, how much was a player involved in the offense when on the court?
 
 **Points + Rebounds + Assists (PRA)** is simply a measure of **output**, combining a player's scoring, playmaking, and rebounding contributions.
@@ -113,7 +112,6 @@ $$
 PRA = PTS + REB + AST
 $$
 
-<br>
 In the USG% calculation above, there are several team-related inputs that the player game logs (from Notebook 01) do not have. Therefore, to get these necessary inputs, team game logs were retrieved from the NBA API endpoint `LeagueGameLog`. After cleaning, player game logs and team game logs were merged into one DataFrame, where USG% and PRA were calculated for every game.
 
 > One could make the argument that rebounding doesn't impact offensive output as directly as points or assists, so why include it? It's a fair point, but **every offensive possession has a lifecycle**. A rebound creates (or extends) an offensive possession, and then points and/or assists finish it (at least in successful offensive possessions). PRA captures this full arc, which is why rebounding remains a key component of measuring offensive output.
@@ -175,7 +173,6 @@ Where:
 - $\beta$ = $\text{elasticity of PRA with respect to USG}$ = $\text{the \\\% change in PRA associated with a 1\\\% change in USG}$
 - $\varepsilon$ = $\text{random game-to-game fluctuations}$
 
-<br>
 According to the regression results, $\beta$ = 0.898.
 
 This means that a **1% increase in role size (USG%)** was associated with a **0.898% increase in output (PRA)**.
@@ -196,7 +193,6 @@ Where:
 - $29.3\\\%$ = $\text{average USG of all-stars over the previous 5 seasons}$
 - $\beta$ = 0.898 = $\text{elasticity of PRA with respect to USG}$
 
-<br>
 With this, all game outputs were comparable.
 
 For example, if Player A has a role size of 30% and Player B has a role size of 15%, their outputs can be fairly compared (via PRA Signal) even though their role sizes are significantly different.
@@ -225,7 +221,6 @@ $$
 Where:
 - $37.8$ = $\text{average PRA of all-stars over the previous 5 seasons}$
 
-<br>
 The **All-Star Output Rate** is the **percentage of a player's games** where the **PRA signal was at least 37.8** (i.e., all-star-level).
 
 This metric indicates **how consistently** a player produced **all-star quality output** game-to-game across the regular season, **regardless of role size**.
@@ -244,7 +239,6 @@ $$
 \text{Output per Role} = \frac{\text{PRA}}{\text{USG}}
 $$
 
-<br>
 Output per Role measures **how efficiently** a player **produced output relative to their role size**. In other words, how efficiently does a player convert their role into output?
 
 > For example, Player X had a raw PRA of 16 with a USG of 15%. Player Y had a raw PRA of 28 with a USG of 30%. Using the formula, Player X's output per role is 1.07, while for Player Y, it's 0.93.
@@ -263,7 +257,6 @@ $$
 \text{Output Consistency} = \sqrt{{\text{All-Star Output Rate}} \times {\text{Output per Role}}}
 $$
 
-<br>
 **Output Consistency (OC)** measures **how consistently** and **how efficiently** a player produced **high output relative to their role size** across all regular season games.
 
 > <sub> To combine All-Star Output Rate and Output per Role, I took the geometric mean of these two metrics. This was done to regulate any potential extreme values. That's the purpose of the square root.
@@ -278,8 +271,8 @@ Where:
 - $\text{OC}$ = $\text{Output Consistency value}$
 - $\min(\text{OC})$ = $\text{minimum observed OC value}$ = $0$
 - $\max(\text{OC})$ = $\text{maximum observed OC value}$ = $1.305$
-
 <br>
+
 Now each player's season can be summed up with one grade. The **average OC grade** across all 373 players in this study was **36.7**. The highest was Nikola Jokić with a grade of 100.0.
 
 ---
