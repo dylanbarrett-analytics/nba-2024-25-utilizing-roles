@@ -299,7 +299,7 @@ For the dashboard, all 373 players in this study were placed into cohorts based 
 - **High Usage:** The player's season USG% is 23% or higher (90 players)   
 <br>
 
-![Top Players Under 23](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_utilizing_roles_rising_talent.png)
+![Top Players Under 23](https://github.com/dylanbarrett-analytics/nba-2024-25-utilizing-roles/blob/main/images/NBA_2024_25_rising_talent.png)
 
 As a bonus, here are the highest OC grades for *players under 23*. This study is not intended to predict future stars, but it's worth sharing for additional context.
   
