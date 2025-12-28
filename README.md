@@ -311,7 +311,7 @@ The full arc of a successful offensive possession begins with a rebound and ends
 
 Notably, **8 of the top 11 OC Grades** belong to **centers** even though their offensive role sizes are relatively small. Their impact often looks routine and effortless, as opposed to flashy or highlight-worthy, especially compared to smaller positions. Because of this, their contributions are easy to take for granted despite being foundational to team success.
 
-Not everyone can be *the star*, but this study illustrates that you don't need to be *the star* to have *star impact*.
+Not everyone on an NBA team can be *the star*, but this study illustrates that you don't need to be *the star* to have *star impact*.
 
 ---
 
