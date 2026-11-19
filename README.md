@@ -324,7 +324,3 @@ Not everyone on an NBA team can be *the star*, but this study illustrates that y
 <p align="center">
   This study was for exploratory purposes only.
 </p>
-
----
-
-<sub> On an unrelated note, I am so excited about the future of the Brooklyn Nets with head coach Jordi Fernández. The development of this team is so fun to watch. ⚫️⚪️🏗️
